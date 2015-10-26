@@ -3,7 +3,7 @@ var router = express.Router();
 var path = require('path');
 
 /* GET home page. */
-router.get('/test', function(req, res, next) {
+router.get('/', function(req, res, next) {
     var data = {
         "title": "Velocity Template Language for JavaScript",
         "brief": "JavaScript版本VTL，Velocity是基于Java的模板引擎，veloctiy.js是JS版本的实现。",
@@ -17,20 +17,16 @@ router.get('/test', function(req, res, next) {
             "link": "http://velocity.apache.org/engine/devel/user-guide.html",
             "text": "velocity user guide"
         },
-        "author": {
-            "name": "shepherdwind",
-            "site": "http://shepherdwind.com"
-        },
         "meta": {
             "git": "https://github.com/shepherdwind/velocity.js"
         },
         "func": {
             getTitle: function(){
-                return 'hello'
+                return 'express-velocity'
             }
         }
     };
-    res.render('test', data)
+    res.render('index', data)
 });
 
 module.exports = router;
